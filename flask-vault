@@ -1,0 +1,9 @@
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksOpen /dev/mapper/vault vault
+www-data ALL=(root) NOPASSWD: /usr/bin/mount /dev/mapper/vault /vault
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/websiteMountVault.sh
+%sudo ALL=(ALL) NOPASSWD: /vault/scripts/*.sh
+%sudo ALL=(ALL) NOPASSWD: /vault/startup/*.sh 
+%sudo ALL=(ALL) NOPASSWD: /vault/scripts/*.py
+%sudo ALL=(ALL) NOPASSWD: /vault/startup/*.py
+%sudo ALL=(ALL) NOPASSWD: /vault/keyman/*.sh
+%sudo ALL=(ALL) NOPASSWD: /home/owner/bin/mountvault.sh

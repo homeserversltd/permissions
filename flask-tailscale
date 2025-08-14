@@ -1,0 +1,16 @@
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tailscale up
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tailscale up --authkey *
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tailscale down
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tailscale ip
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tailscale status
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tailscale serve
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tailscale funnel
+www-data ALL=(ALL) NOPASSWD: /usr/local/sbin/tailscale-ampache-serve.sh
+www-data ALL=(ALL) NOPASSWD: /usr/bin/dd if=/tmp/* of=/var/www/homeserver/src/config/homeserver.json
+www-data ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart gunicorn.service
+www-data ALL=(ALL) NOPASSWD: /usr/local/sbin/tailnetName
+www-data ALL=(ALL) NOPASSWD: /usr/local/sbin/tailUp
+www-data ALL=(ALL) NOPASSWD: /usr/bin/dd if=/tmp/* of=/etc/nginx/sites-available/homeserver
+www-data ALL=(ALL) NOPASSWD: /usr/bin/dd if=/etc/nginx/sites-available/homeserver.bak of=/etc/nginx/sites-available/homeserver
+www-data ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart nginx
+www-data ALL=(ALL) NOPASSWD: /usr/bin/systemctl is-active nginx

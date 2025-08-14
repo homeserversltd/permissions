@@ -1,0 +1,15 @@
+www-data ALL=(ALL) NOPASSWD: /usr/local/sbin/factoryFallback.sh
+www-data ALL=(ALL) NOPASSWD: /usr/bin/tee -a /var/log/homeserver/homeserver.log
+www-data ALL=(ALL) NOPASSWD: /usr/bin/cat /var/www/homeserver/src/config/homeserver.json
+www-data ALL=(ALL) NOPASSWD: /usr/bin/cat /etc/homeserver.factory
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq . /var/www/homeserver/src/config/homeserver.json
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq . /etc/homeserver.factory
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq empty /var/www/homeserver/src/config/homeserver.json
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq empty /etc/homeserver.factory
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq --exit-status * /var/www/homeserver/src/config/homeserver.json
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq --exit-status * /etc/homeserver.factory
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq -e * /var/www/homeserver/src/config/homeserver.json
+www-data ALL=(ALL) NOPASSWD: /usr/bin/jq -e * /etc/homeserver.factory
+www-data ALL=(ALL) NOPASSWD: /usr/bin/test -r /var/www/homeserver/src/config/homeserver.json
+www-data ALL=(ALL) NOPASSWD: /usr/bin/test -r /etc/homeserver.factory 
+www-data ALL=(ALL) NOPASSWD: /usr/local/sbin/setupNAS.sh

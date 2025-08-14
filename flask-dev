@@ -1,0 +1,53 @@
+# Dev tab permissions
+www-data ALL=(root) NOPASSWD: /usr/bin/cat /deploy/results.txt
+www-data ALL=(root) NOPASSWD: /usr/bin/cat /deploy/password.txt
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/wipeDeployPartition.sh
+www-data ALL=(root) NOPASSWD: /usr/bin/rm /usr/local/sbin/wipeDeployPartition.sh
+www-data ALL=(root) NOPASSWD: /usr/bin/rm /var/www/homeserver/deployment.log
+www-data ALL=(root) NOPASSWD: /usr/bin/cat /var/www/homeserver/deployment.log
+www-data ALL=(root) NOPASSWD: /usr/bin/bash -c cd /var/www/homeserver && npm run build
+www-data ALL=(root) NOPASSWD: /usr/bin/rm /etc/sudoers.d/flask-dev
+
+# Hard drive test permissions
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -J
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o NAME
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o SIZE *
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o TYPE *
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o FSTYPE *
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o MOUNTPOINT *
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o LABEL *
+www-data ALL=(root) NOPASSWD: /usr/bin/ls -la /dev/mapper/*
+www-data ALL=(root) NOPASSWD: /usr/bin/udevadm info --query=property --name=*
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/harddrive_test.sh /dev/* quick
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/harddrive_test.sh /dev/* full
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/harddrive_test.sh /dev/* ultimate
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/harddrive_test.sh /dev/mapper/* quick
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/harddrive_test.sh /dev/mapper/* full
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/harddrive_test.sh /dev/mapper/* ultimate
+www-data ALL=(root) NOPASSWD: /usr/bin/cat /var/harddriveTest.txt
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/thermalTest.sh
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/thermalTest.sh
+www-data ALL=(root) NOPASSWD: /bin/cat /var/www/homeserver/thermalFail.txt
+www-data ALL=(root) NOPASSWD: /bin/rm /var/www/homeserver/thermalFail.txt
+www-data ALL=(root) NOPASSWD: /usr/bin/tee -a /var/www/homeserver/thermalFail.txt
+
+# Deploy partition unlock permissions
+www-data ALL=(root) NOPASSWD: /usr/bin/mountpoint -q /deploy
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o NAME
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o SIZE
+www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o TYPE
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup isLuks /dev/*
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksOpen /dev/* deploy
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup close deploy
+www-data ALL=(root) NOPASSWD: /usr/bin/mkdir -p /deploy
+www-data ALL=(root) NOPASSWD: /usr/bin/mount /dev/mapper/deploy /deploy
+
+# Vault password setup permissions
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/setVaultPassword.sh
+www-data ALL=(root) NOPASSWD: /usr/bin/rm /usr/local/sbin/setVaultPassword.sh
+
+# Modular deployment step permissions
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/removeDeploymentScripts.sh
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/removeDeveloperArtifacts.sh
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/rebuildWebsite.sh
+www-data ALL=(root) NOPASSWD: /usr/bin/systemctl restart gunicorn.service

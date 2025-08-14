@@ -1,0 +1,13 @@
+www-data ALL=(root) NOPASSWD: /vault/keyman/newkey.sh * * *
+www-data ALL=(root) NOPASSWD: /vault/scripts/exportNAS.sh
+www-data ALL=(root) NOPASSWD: /vault/scripts/exportServiceSuite.sh
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksAddKey * *
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksRemoveKey * *
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksKillSlot * *
+www-data ALL=(root) NOPASSWD: /vault/keyman/change_service_suite_key.sh
+www-data ALL=(root) NOPASSWD: /vault/keyman/change_service_suite_key.sh --non-interactive * *
+www-data ALL=(root) NOPASSWD: /usr/sbin/chpasswd
+www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksDump *
+www-data ALL=(root) NOPASSWD: /vault/keyman/change_key.sh * * *
+www-data ALL=(root) NOPASSWD: /vault/keyman/updateLuksKey.sh * * *
+www-data ALL=(root) NOPASSWD: /vault/keyman/updateTransmissionKey.sh * *

@@ -1,0 +1,2 @@
+www-data ALL=(root) NOPASSWD: /usr/bin/cat /sys/class/powercap/intel-rapl\:0\:0/energy_uj
+www-data ALL=(root) NOPASSWD: /usr/bin/cat /sys/class/powercap/intel-rapl\:0\:1/energy_uj

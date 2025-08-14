@@ -1,0 +1,6 @@
+www-data ALL=(ALL) NOPASSWD: /usr/bin/chmod *
+www-data ALL=(ALL) NOPASSWD: /usr/bin/chown *
+www-data ALL=(ALL) NOPASSWD: /usr/bin/mkdir -p *
+www-data ALL=(ALL) NOPASSWD: /usr/bin/stat *
+www-data ALL=(ALL) NOPASSWD: /usr/bin/setfacl *
+www-data ALL=(ALL) NOPASSWD: /usr/bin/usermod -aG *

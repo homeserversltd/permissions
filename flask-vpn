@@ -1,0 +1,5 @@
+www-data ALL=(root) NOPASSWD: \
+    /usr/bin/test -f /vault/.keys/pia.key, \
+    /usr/bin/test -f /vault/.keys/transmission.key, \
+    /vault/keyman/change_key.sh pia * * , \
+    /vault/scripts/transmission.py *

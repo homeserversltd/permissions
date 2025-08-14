@@ -1,0 +1,22 @@
+# Allow www-data to run update management scripts with sudo
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/updateManager.sh
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/updateManager.sh *
+www-data ALL=(root) NOPASSWD: /usr/local/lib/updates/updateManager.sh
+www-data ALL=(root) NOPASSWD: /usr/local/lib/updates/updateManager.sh *
+
+# Allow Python module management operations
+www-data ALL=(root) NOPASSWD: /usr/bin/python3 -m updates.index
+www-data ALL=(root) NOPASSWD: /usr/bin/python3 -m updates.index *
+
+# Allow Git operations for update synchronization
+www-data ALL=(root) NOPASSWD: /usr/bin/git clone *
+www-data ALL=(root) NOPASSWD: /usr/bin/git pull *
+www-data ALL=(root) NOPASSWD: /usr/bin/git fetch *
+www-data ALL=(root) NOPASSWD: /usr/bin/git checkout *
+www-data ALL=(root) NOPASSWD: /usr/bin/git reset *
+
+# Allow crontab management for update scheduling
+www-data ALL=(root) NOPASSWD: /usr/bin/crontab -l
+www-data ALL=(root) NOPASSWD: /usr/bin/crontab -
+www-data ALL=(root) NOPASSWD: /usr/bin/crontab -r
+www-data ALL=(root) NOPASSWD: /usr/bin/crontab /tmp/*
