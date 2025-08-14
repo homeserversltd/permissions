@@ -145,7 +145,7 @@ This framework is designed for enterprise environments. Contributions should mai
 
 ## License
 
-[Include appropriate license information]
+GPL-3.0
 
 ## Support
 
