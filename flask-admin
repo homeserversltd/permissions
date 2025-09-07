@@ -7,7 +7,7 @@ www-data ALL=(root) NOPASSWD: /usr/bin/dd if=/tmp/sshd_config.new of=/etc/ssh/ss
 www-data ALL=(root) NOPASSWD: /usr/bin/rm -f /tmp/sshd_config.new
 www-data ALL=(root) NOPASSWD: /usr/bin/systemctl restart sshd.service
 www-data ALL=(root) NOPASSWD: /usr/bin/systemctl restart ssh.service
-www-data ALL=(root) NOPASSWD: /usr/bin/smbpasswd -s admin
+www-data ALL=(root) NOPASSWD: /usr/bin/smbpasswd -s owner
 www-data ALL=(root) NOPASSWD: /bin/cp /etc/ssl/home.arpa/cert.pem /var/www/homeserver/certs/root.crt
 www-data ALL=(root) NOPASSWD: /bin/chmod 644 /var/www/homeserver/certs/root.crt
 www-data ALL=(root) NOPASSWD: /usr/local/sbin/createCertBundle.sh *
