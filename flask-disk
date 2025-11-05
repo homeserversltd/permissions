@@ -36,6 +36,7 @@ www-data ALL=(root) NOPASSWD: /vault/scripts/mountDrive.sh *
 www-data ALL=(root) NOPASSWD: /vault/scripts/unmountDrive.sh *
 www-data ALL=(root) NOPASSWD: /usr/bin/rsync -avH --stats --delete-before --exclude=lost+found /mnt/nas/ /mnt/nas_backup/
 www-data ALL=(root) NOPASSWD: /usr/bin/rsync -avH --delete-before --max-size=0 --exclude=lost+found /mnt/nas/ /mnt/nas_backup/
+www-data ALL=(root) NOPASSWD: /usr/local/sbin/safe-nas-sync.sh
 www-data ALL=(root) NOPASSWD: /usr/bin/crontab -l
 www-data ALL=(root) NOPASSWD: /usr/bin/crontab -l -u root
 www-data ALL=(root) NOPASSWD: /usr/bin/crontab *
