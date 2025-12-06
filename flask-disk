@@ -12,6 +12,7 @@ www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o TYPE /dev/*
 www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o LABEL /dev/*
 www-data ALL=(root) NOPASSWD: /usr/bin/lsblk -n -o PKNAME /dev/mapper/*
 www-data ALL=(root) NOPASSWD: /usr/bin/df *
+www-data ALL=(root) NOPASSWD: /usr/sbin/blkid
 www-data ALL=(root) NOPASSWD: /usr/sbin/blkid -t TYPE=crypto_LUKS -o device
 www-data ALL=(root) NOPASSWD: /usr/sbin/blkid -o value -s TYPE *
 www-data ALL=(root) NOPASSWD: /usr/sbin/blkid -o value -s UUID *
