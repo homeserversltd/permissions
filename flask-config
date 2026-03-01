@@ -13,3 +13,5 @@ www-data ALL=(ALL) NOPASSWD: /usr/bin/jq -e * /etc/homeserver.factory
 www-data ALL=(ALL) NOPASSWD: /usr/bin/test -r /var/www/homeserver/src/config/homeserver.json
 www-data ALL=(ALL) NOPASSWD: /usr/bin/test -r /etc/homeserver.factory 
 www-data ALL=(ALL) NOPASSWD: /usr/local/sbin/setupNAS.sh
+www-data ALL=(ALL) NOPASSWD: /usr/bin/bash /usr/local/sbin/setupNAS.sh
+www-data ALL=(ALL) NOPASSWD: /usr/bin/bash /usr/local/sbin/setupNAS.sh *

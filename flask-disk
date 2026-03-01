@@ -19,6 +19,7 @@ www-data ALL=(root) NOPASSWD: /usr/sbin/blkid -o value -s UUID *
 www-data ALL=(root) NOPASSWD: /usr/sbin/dmsetup ls --target crypt
 www-data ALL=(root) NOPASSWD: /usr/sbin/dmsetup deps -o devname /dev/mapper/*
 www-data ALL=(root) NOPASSWD: /usr/bin/findmnt -n *
+www-data ALL=(root) NOPASSWD: /usr/bin/findmnt -S * -n -o TARGET
 www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup open * *
 www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksFormat --type luks2 * -q --batch-mode
 www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksFormat -S - --type luks2 * -q
@@ -26,14 +27,18 @@ www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup close *
 www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup status *
 www-data ALL=(root) NOPASSWD: /usr/sbin/mkfs.xfs *
 www-data ALL=(root) NOPASSWD: /usr/bin/mount * /mnt/*
+www-data ALL=(root) NOPASSWD: /usr/bin/mount * /tmp/import_source_*
 www-data ALL=(root) NOPASSWD: /usr/bin/umount /mnt/*
 www-data ALL=(root) NOPASSWD: /usr/bin/umount -f /mnt/*
 www-data ALL=(root) NOPASSWD: /usr/bin/umount -l /mnt/*
+www-data ALL=(root) NOPASSWD: /usr/bin/umount /tmp/import_source_*
 www-data ALL=(root) NOPASSWD: /usr/bin/ls -la /dev/mapper/*
 www-data ALL=(root) NOPASSWD: /usr/sbin/wipefs -a *
 www-data ALL=(root) NOPASSWD: /vault/scripts/exportNAS.sh
 www-data ALL=(root) NOPASSWD: /vault/scripts/closeNAS.sh *
+www-data ALL=(root) NOPASSWD: /usr/bin/bash /vault/scripts/mountDrive.sh *
 www-data ALL=(root) NOPASSWD: /vault/scripts/mountDrive.sh *
+www-data ALL=(root) NOPASSWD: /usr/bin/bash /vault/scripts/unmountDrive.sh *
 www-data ALL=(root) NOPASSWD: /vault/scripts/unmountDrive.sh *
 www-data ALL=(root) NOPASSWD: /usr/bin/rsync -avH --stats --delete-before --exclude=lost+found /mnt/nas/ /mnt/nas_backup/
 www-data ALL=(root) NOPASSWD: /usr/bin/rsync -avH --delete-before --max-size=0 --exclude=lost+found /mnt/nas/ /mnt/nas_backup/
@@ -72,6 +77,10 @@ www-data ALL=(root) NOPASSWD: /usr/sbin/smartctl -d sat -T permissive -l selftes
 www-data ALL=(root) NOPASSWD: /usr/sbin/smartctl -d sat -T permissive -A /dev/*
 www-data ALL=(root) NOPASSWD: /usr/sbin/smartctl -i /dev/*
 www-data ALL=(root) NOPASSWD: /usr/bin/udevadm info --query=property --name=/dev/*
+www-data ALL=(root) NOPASSWD: /usr/sbin/sgdisk -c * *
+www-data ALL=(root) NOPASSWD: /usr/sbin/sgdisk -o /dev/*
+www-data ALL=(root) NOPASSWD: /usr/sbin/sgdisk -n * -t * /dev/*
+www-data ALL=(root) NOPASSWD: /usr/bin/udevadm trigger --subsystem-match=block --action=change
 www-data ALL=(root) NOPASSWD: /usr/sbin/dmsetup deps -o devname /dev/mapper/*
 www-data ALL=(root) NOPASSWD: /usr/sbin/xfs_repair -n /dev/mapper/*
 www-data ALL=(root) NOPASSWD: /usr/sbin/e2fsck -n /dev/mapper/*

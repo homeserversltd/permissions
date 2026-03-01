@@ -324,4 +324,3 @@ This project is licensed under **GPL-3.0**. Contributions are accepted under thi
 Security is foundational to digital sovereignty. Your careful work protects user privacy and system integrity.
 
 *HOMESERVER LLC - Professional Digital Sovereignty Solutions*
-

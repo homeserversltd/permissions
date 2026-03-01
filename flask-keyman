@@ -1,4 +1,5 @@
 www-data ALL=(root) NOPASSWD: /vault/keyman/newkey.sh * * *
+www-data ALL=(root) NOPASSWD: /usr/bin/bash /vault/scripts/exportNAS.sh
 www-data ALL=(root) NOPASSWD: /vault/scripts/exportNAS.sh
 www-data ALL=(root) NOPASSWD: /vault/scripts/exportServiceSuite.sh
 www-data ALL=(root) NOPASSWD: /usr/sbin/cryptsetup luksAddKey * *
