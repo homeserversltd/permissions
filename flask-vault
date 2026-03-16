@@ -6,4 +6,4 @@ www-data ALL=(root) NOPASSWD: /usr/local/sbin/websiteMountVault.sh
 %sudo ALL=(ALL) NOPASSWD: /vault/scripts/*.py
 %sudo ALL=(ALL) NOPASSWD: /vault/startup/*.py
 %sudo ALL=(ALL) NOPASSWD: /vault/keyman/*.sh
-%sudo ALL=(ALL) NOPASSWD: /home/owner/bin/mountvault.sh
+%sudo ALL=(ALL) NOPASSWD: /usr/local/sbin/mountvault.sh
