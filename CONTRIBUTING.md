@@ -167,7 +167,7 @@ In your PR, include:
 - Attempted shell escape: BLOCKED
 
 ### Test Environment
-- OS: Debian 12
+- OS: Debian 13 (Trixie)
 - Sudo version: 1.9.x
 - HOMESERVER version: X.X.X
 
