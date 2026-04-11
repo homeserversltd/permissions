@@ -1,5 +1,6 @@
 www-data ALL=(root) NOPASSWD: /vault/keyman/newkey.sh * * *
 www-data ALL=(root) NOPASSWD: /var/www/homeserver/backend/chiaTab/export_chia_fleet_key.sh
+www-data ALL=(root) NOPASSWD: /var/www/homeserver/backend/chiaTab/export_godshand_sync_token.sh
 www-data ALL=(root) NOPASSWD: /usr/bin/bash /vault/scripts/exportNAS.sh
 www-data ALL=(root) NOPASSWD: /vault/scripts/exportNAS.sh
 www-data ALL=(root) NOPASSWD: /vault/scripts/exportServiceSuite.sh
