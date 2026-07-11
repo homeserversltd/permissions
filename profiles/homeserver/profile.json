@@ -1,0 +1,23 @@
+{
+  "schema": "homeserver.sudoers.profile.v1",
+  "profile_id": "homeserver",
+  "source_layout": "legacy-root",
+  "policies": [
+    {"basename": "flask-admin", "source": "flask-admin"},
+    {"basename": "flask-cat", "source": "flask-cat"},
+    {"basename": "flask-commands", "source": "flask-commands"},
+    {"basename": "flask-config", "source": "flask-config"},
+    {"basename": "flask-disk", "source": "flask-disk"},
+    {"basename": "flask-files", "source": "flask-files"},
+    {"basename": "flask-keyman", "source": "flask-keyman"},
+    {"basename": "flask-systemctl", "source": "flask-systemctl"},
+    {"basename": "flask-tailscale", "source": "flask-tailscale"},
+    {"basename": "flask-updates", "source": "flask-updates"},
+    {"basename": "flask-vault", "source": "flask-vault"},
+    {"basename": "flask-vpn", "source": "flask-vpn"}
+  ],
+  "install_target": "/etc/sudoers.d",
+  "install_mode": "0440",
+  "install_owner": "root:root",
+  "validate": "visudo"
+}
