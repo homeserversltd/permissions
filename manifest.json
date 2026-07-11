@@ -1,0 +1,16 @@
+{
+  "schema": "homeserver.sudoers.manifest.v1",
+  "repository": "https://github.com/homeserversltd/permissions.git",
+  "install_target": "/etc/sudoers.d",
+  "install_mode": "0440",
+  "install_owner": "root:root",
+  "validate": "visudo",
+  "consumers": {
+    "updates_harvester": {"layout": "repository-root", "discovery": "iterdir", "policy_pattern": "^flask-.*$"},
+    "harmonia": {"layout": "profile-registry", "registry": "profiles"}
+  },
+  "profiles": {
+    "homeserver": "profiles/homeserver/profile.json",
+    "tv": "profiles/tv/profile.json"
+  }
+}
