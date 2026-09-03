@@ -3,6 +3,7 @@
   "profile_id": "homeserver",
   "source_layout": "legacy-root",
   "policies": [
+    {"basename": "caduceus-journal", "source": "caduceus-journal"},
     {"basename": "flask-admin", "source": "flask-admin"},
     {"basename": "flask-cat", "source": "flask-cat"},
     {"basename": "flask-commands", "source": "flask-commands"},

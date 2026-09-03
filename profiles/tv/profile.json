@@ -2,7 +2,10 @@
   "schema": "homeserver.sudoers.profile.v1",
   "profile_id": "tv",
   "source_layout": "profile-folder",
-  "policies": [{"basename": "10-owner-wheel", "source": "profiles/tv/10-owner-wheel"}],
+  "policies": [
+    {"basename": "10-owner-wheel", "source": "profiles/tv/10-owner-wheel"},
+    {"basename": "caduceus-journal", "source": "caduceus-journal"}
+  ],
   "install_target": "/etc/sudoers.d",
   "install_mode": "0440",
   "install_owner": "root:root",
